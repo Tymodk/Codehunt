@@ -16,7 +16,17 @@
                     @if($codetable['user_id'] === null)
                     <a href="{{ url('/generatecodes') }}"><button type="button" class="btn btn-primary">Generate your codes!</button></a>
                     @else
-                    YOU CAN START HUNTING
+                    <p>YOU CAN START HUNTING</p>
+                    <p>Whenever you find any of your codes they will be listed here!</p>
+                    @if($codetable['found1'])
+                        <p>Code 1: {{$codetable['code1']}}</p>
+                    @endif
+                    @if($codetable['found1'])
+                    <p>Oh wow! You've found the first code! This means you get to go to the next stage!</p>
+                    <a href="{{ url('/hunt2')}}">The second round!</a>
+                    @else
+                    <a href="{{ url('/huntstart') }}">Click here to start your hunt!</a>
+                    @endif
                     @endif
                 </div>
                 @else
