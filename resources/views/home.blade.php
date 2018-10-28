@@ -21,11 +21,20 @@
                     @if($codetable['found1'])
                         <p>Code 1: {{$codetable['code1']}}</p>
                     @endif
+                    @if($codetable['found2'])
+                        <p>Code 2: {{$codetable['code2']}}</p>
+                    @endif
+                    @if($codetable['found2'])
+                    <p>Incredible! The second code is all yours, congratulations!</p>
+                    <a href="{{ url('/hunt3')}}">The third round!</a>
+
+                    @else
                     @if($codetable['found1'])
                     <p>Oh wow! You've found the first code! This means you get to go to the next stage!</p>
                     <a href="{{ url('/hunt2')}}">The second round!</a>
                     @else
                     <a href="{{ url('/huntstart') }}">Click here to start your hunt!</a>
+                    @endif
                     @endif
                     @endif
                 </div>
